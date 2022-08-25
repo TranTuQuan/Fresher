@@ -7,16 +7,25 @@ void swap (int *x, int *y)
     *x=*y;
     *y=temp;
 }
-void MangA (int A[])
+void MangA (int A[],int a)
 {
     printf("Mang A: ");
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < a; i++)
     {
         printf("%d  ", A[i]);
     }
     printf("\n ");
 }
-void sort( int A[], int a)
+void printA(int A[],int a)
+{
+    printf("\nMang a sau khi xep :");
+    for (int i = 0; i < a; i++)
+    {
+        printf(" %d ",A[i]);
+    }
+    printf("\n");
+}
+void sapXepTang( int A[], int a)
 {
     for (int i = 0; i < a-1; i++)
     {
@@ -29,9 +38,9 @@ void sort( int A[], int a)
         }
         
     }
-    
+    printA(A,a);
 }
-void sort1( int A[], int a)
+void sapXepGiam( int A[], int a)
 {
     for (int i = 0; i < a-1; i++)
     {
@@ -44,26 +53,14 @@ void sort1( int A[], int a)
         }
         
     }
-    
-}
-void printA(int A[],int a)
-{
-    printf("\nMang a sau khi xep :");
-    for (int i = 0; i < a; i++)
-    {
-        printf(" %d ",A[i]);
-    }
-    printf("\n");
+    printA(A,a);
 }
 int main()
 {
     int A[]= {1,5,3,4,9,6,7,8,2,0,58,48,64,85};
     int a = sizeof(A)/sizeof(int);
-    MangA(A);
-    printf("%d", a);
-    sort(A,a);
-    printA(A,a);
-    sort1(A,a);
-    printA(A,a);
-    
+    MangA(A,a);
+    sapXepTang(A,a);
+    sapXepGiam(A,a);
+    return 0 ;
 }
